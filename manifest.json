@@ -1,0 +1,17 @@
+{
+  "name": "Repo Birthdays",
+  "manifest_version": 2,
+  "description": "Adds a badge showing the age of the visible Github repo",
+  "version": "1.0",
+  "homepage_url": "https://thingsima.de/projects/repo-birthdays",
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*/*"],
+      "js": ["birthday.js"]
+    }
+  ],
+  "permissions": [
+    "*://github.com/*/*",
+    "activeTab"
+  ]
+}
