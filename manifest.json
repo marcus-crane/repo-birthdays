@@ -1,9 +1,9 @@
 {
   "name": "Repo Birthdays",
   "manifest_version": 2,
-  "description": "Adds a badge showing the age of the visible Github repo",
+  "description": "Adds a badge showing the age of any Github repo you visit",
   "version": "1.0",
-  "homepage_url": "https://thingsima.de/projects/repo-birthdays",
+  "homepage_url": "https://github.com/marcus-crane/repo-birthdays",
   "content_scripts": [
     {
       "matches": ["*://github.com/*/*"],
