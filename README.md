@@ -2,4 +2,4 @@
 
 This is a Chrome extension that shows when a Github repo was first created.
 
-It hasn't been uploaded to the Chrome Web Store yet.
+It's available in the Chrome Web Store [here](https://chrome.google.com/webstore/detail/repo-birthdays/pmfhcjhcddnompkialjfidnbiibbccie).
