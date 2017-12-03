@@ -7,8 +7,14 @@
   function queryRepo(user, repo) {
     fetch(`https://api.github.com/repos/${user}/${repo}`)
     .then(r => r.json())
-    .then(data => appendDate(data.created_at))
-    .catch(e => console.error(e))
+    .then(data => {
+      if (data.status === 200) {
+        appendDate(data.created_at)
+      } else {
+        throw new Error()
+      }
+    })
+    .catch(e => console.error("This page isn't a valid repo and that's perfectly fine"))
   }
 
   // Thanks to montanaflynn
@@ -19,7 +25,7 @@
     var monthName = monthNames[input.getMonth()]
     var day = input.getDate()
     var year = input.getFullYear()
-    return `${monthName}. ${day}, ${year}`
+    return `${monthName} ${day}, ${year}`
   }
 
   function appendDate(repo_date) {
@@ -38,8 +44,6 @@
         </p>
       </li>`
       element.insertAdjacentHTML('afterbegin', birthdayBadge)
-    } else {
-      console.error("🎉 This URL seemed like it could be a repo but it's not so nevermind 🎉")
     }
   }
 
