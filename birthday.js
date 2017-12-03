@@ -4,23 +4,24 @@
     return { "user": segments[0], "repo": segments[1] }
   }
 
+  function handleError(response) {
+    if (!response.ok) {
+      throw Error()
+    }
+    return response.json()
+  }
+
   function queryRepo(user, repo) {
     fetch(`https://api.github.com/repos/${user}/${repo}`)
-    .then(r => r.json())
-    .then(data => {
-      if (data.status === 200) {
-        appendDate(data.created_at)
-      } else {
-        throw new Error()
-      }
-    })
-    .catch(e => console.error("This page isn't a valid repo and that's perfectly fine"))
+    .then(handleError)
+    .then(appendDate)
+    .catch(error => console.error("This page isn't a valid repo and that's perfectly fine"))
   }
 
   // Thanks to montanaflynn
   // https://gist.github.com/montanaflynn/97af56099dc882a1784c
-  function humaniseDate(repo_date) {
-    var input = new Date(repo_date)
+  function humaniseDate(repo_data) {
+    var input = new Date(repo_data.created_at)
     var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     var monthName = monthNames[input.getMonth()]
     var day = input.getDate()
