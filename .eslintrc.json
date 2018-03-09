@@ -1,0 +1,7 @@
+{
+    "extends": "standard",
+    "globals": {
+    	"browser": false,
+    	"fetch": false
+    }
+}

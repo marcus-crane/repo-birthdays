@@ -18,5 +18,8 @@
   "permissions": [
     "*://github.com/*/*",
     "activeTab"
-  ]
+  ],
+  "background": {
+  	"scripts": ["background.js"]
+  }
 }

@@ -1,0 +1,27 @@
+{
+  "name": "repo-birthdays",
+  "version": "1.0.0",
+  "description": "An extension for showing repo creation dates",
+  "main": "background.js",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcus-crane/repo-birthdays.git"
+  },
+  "author": "Marcus Crane <marcus@thingsima.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcus-crane/repo-birthdays/issues"
+  },
+  "homepage": "https://github.com/marcus-crane/repo-birthdays#readme",
+  "devDependencies": {
+    "eslint": "^4.18.2",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
