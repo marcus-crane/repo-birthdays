@@ -34,20 +34,31 @@
 
   function appendDate (repoDate) {
     const element = document.querySelector('.pagehead-actions')
+    const creationDate = humaniseDate(repoDate)
     // Check that we're on a page with labels
     if (element !== null) {
-      const creationDate = humaniseDate(repoDate)
       const creationDateBadge = `<li>
         <p class="btn btn-sm btn-with-count">
-        <svg viewBox="0 0 16 16" version="1.1" height="16" class="octicon octicon-repo-forked" aria-hidden="true">
-          <path fill-rule="evenodd" d="M13 4h-1.38c.19-.33.33-.67.36-.91.06-.67-.11-1.22-.52-1.61C11.1 1.1 10.65 1 10.1 1h-.11c-.53.02-1.11.25-1.53.58-.42.33-.73.72-.97 1.2-.23-.48-.55-.88-.97-1.2-.42-.32-1-.58-1.53-.58h-.03c-.56 0-1.06.09-1.44.48-.41.39-.58.94-.52 1.61.03.23.17.58.36.91H1.98c-.55 0-1 .45-1 1v3h1v5c0 .55.45 1 1 1h9c.55 0 1-.45 1-1V8h1V5c0-.55-.45-1-1-1H13zm-4.78-.88c.17-.36.42-.67.75-.92.3-.23.72-.39 1.05-.41h.09c.45 0 .66.11.8.25s.33.39.3.95c-.05.19-.25.61-.5 1h-2.9l.41-.88v.01zM4.09 2.04c.13-.13.31-.25.91-.25.31 0 .72.17 1.03.41.33.25.58.55.75.92L7.2 4H4.3c-.25-.39-.45-.81-.5-1-.03-.56.16-.81.3-.95l-.01-.01zM7 12.99H3V8h4v5-.01zm0-6H2V5h5v2-.01zm5 6H8V8h4v5-.01zm1-6H8V5h5v2-.01z">
-          </path>
+        <svg viewBox="0 0 16 16" version="1.1" height="16" class="octicon octicon-repo-forked mr-1" aria-hidden="true">
+          <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
         </svg> Created</p>
         <p class="social-count js-social-count" aria-label="This repo was created on ${creationDate}">
           ${creationDate}
         </p>
       </li>`
       element.insertAdjacentHTML('afterbegin', creationDateBadge)
+    }
+    const smallBadges = document.querySelector('#responsive-meta-container div.mb-3')
+    if (smallBadges !== null) {
+      const smallCreationDateBadge = `
+        <a class="Link--secondary no-underline mr-3">
+          <svg viewBox="0 0 16 16" version="1.1" height="16" class="octicon octicon-repo-forked mr-1" aria-hidden="true">
+            <path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"/>
+          </svg>
+            ${creationDate}
+        </a>
+      `
+      smallBadges.insertAdjacentHTML('afterbegin', smallCreationDateBadge)
     }
   }
 
