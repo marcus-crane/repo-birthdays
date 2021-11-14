@@ -1,7 +1,5 @@
 name: Lint
-on:
-  release:
-    types: [push]
+on: push
 jobs:
   release:
     name: Run eslint against the extension
