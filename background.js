@@ -1,5 +1,5 @@
-chrome.browserAction.onClicked.addListener(function (tab) {
-  chrome.tabs.executeScript(null, {
-    file: 'birthday.js'
+chrome.action.onClicked.addListener(function (tab) {
+  chrome.scripting.executeScript(null, {
+    files: ['birthday.js']
   })
 })

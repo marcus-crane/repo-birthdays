@@ -1,8 +1,8 @@
 {
   "name": "Repo Birthdays",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "Adds a badge showing the age of any Github repo you visit",
-  "version": "1.0",
+  "version": "1.1.0",
   "homepage_url": "https://github.com/marcus-crane/repo-birthdays",
   "icons": {
     "16": "icon16.png",
@@ -16,10 +16,12 @@
     }
   ],
   "permissions": [
-    "*://github.com/*/*",
     "activeTab"
   ],
+  "host_permissions": [
+    "*://github.com/*/*"
+  ],
   "background": {
-  	"scripts": ["background.js"]
+  	"service_worker": "background.js"
   }
 }
