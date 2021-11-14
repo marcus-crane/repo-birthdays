@@ -4,6 +4,7 @@
   "description": "An extension for showing repo creation dates",
   "main": "script.js",
   "scripts": {
+    "package": "zip -r extension.zip *.png manifest.json *.md *.js",
     "lint": "eslint ."
   },
   "repository": {

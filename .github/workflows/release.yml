@@ -8,10 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: papeloto/action-zip@v1
+      - uses: actions/setup-node@v2
         with:
-          files: background.js birthday.js icon128.png icon16.png icon48.png manifest.json README.md LICENSE.md
-          dest: extension.zip
+          node-version: '16'
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn run package
       - name: Publish artifacts on Github
         uses: softprops/action-gh-release@v1
         with:
