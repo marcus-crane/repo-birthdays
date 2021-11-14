@@ -12,7 +12,7 @@
   "content_scripts": [
     {
       "matches": ["*://github.com/*/*"],
-      "js": ["birthday.js"]
+      "js": ["script.js"]
     }
   ],
   "permissions": [

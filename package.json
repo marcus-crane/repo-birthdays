@@ -2,7 +2,7 @@
   "name": "repo-birthdays",
   "version": "1.1.0",
   "description": "An extension for showing repo creation dates",
-  "main": "background.js",
+  "main": "script.js",
   "scripts": {
     "lint": "eslint ."
   },
